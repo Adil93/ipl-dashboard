@@ -1,13 +1,18 @@
 package com.myworks.ipldashboard.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 @Entity
 public class Team {
 
@@ -17,6 +22,9 @@ public class Team {
     private String name;
     private long totalMatches;
     private long totalWins;
+
+    @Transient
+    private List<Match> matches;
 
     public Team(String name, long totalMatches) {
         this.name = name;
