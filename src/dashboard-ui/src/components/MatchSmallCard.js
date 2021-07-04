@@ -1,18 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './scss/MatchSmallCard.scss';
 
 
 export const MatchSmallCard = ({ name, match }) => {
   const opponent = match.team1 === name ? match.team2 : match.team1;
   const opponentRoute = `/teams/${opponent}`;
+  const isMatchWon = name === match.winner;
   return (
-    <div className="MatchSmallCard">
-      <h3>vs
-        <Link to={opponentRoute}> {opponent}</Link>
-      </h3>
-      <p>
-        {match.winner} won by {match.resultMargin} {match.result}
-      </p>
+    <div className={isMatchWon ? "MatchSmallCard won-card" : "MatchSmallCard lost-card"}>
+      <span className="vs">vs</span>
+      <h3><Link to={opponentRoute}> {opponent}</Link></h3>
+      <div className="match-result">
+        <p>
+          {match.winner} won by {match.resultMargin} {match.result}
+        </p>
+      </div>
     </div>
   );
 }

@@ -27,7 +27,7 @@ public class TeamService {
     }
 
     public List<Match> GetAllMatchesOfATeam(String name) {
-        Pageable pageable = PageRequest.of(0, 5);
+        Pageable pageable = PageRequest.of(0, 4);
         return matchRepo.getByTeam1OrTeam2OrderByDateDesc(name, name, pageable).get();
     }
 
