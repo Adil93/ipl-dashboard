@@ -1,0 +1,22 @@
+.HomePage {
+    .app-name {
+        font-size: 4rem;
+        margin: 30 px auto;
+        text-align: center;
+    }
+    .team-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        row-gap: 10px;
+        padding: 50px;
+    }
+    .header-section {
+        display: grid;
+        grid-template-columns: 1fr 20fr;
+    }
+
+    .image {
+        max-width: 100px;
+    }
+}

@@ -22,6 +22,11 @@ public class TeamController {
     @Autowired
     private TeamService teamService;
 
+    @GetMapping()
+    public Iterable<Team> getAllTeams() {
+        return teamService.getAllTeams();
+    }
+
     @GetMapping("/{name}")
     public Team getTeam(@PathVariable String name) {
         Team team = teamService.getTeamByName(name);

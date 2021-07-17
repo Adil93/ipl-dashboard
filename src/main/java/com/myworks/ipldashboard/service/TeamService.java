@@ -22,6 +22,10 @@ public class TeamService {
     @Autowired
     private MatchRepository matchRepo;
 
+    public Iterable<Team> getAllTeams() {
+        return teamRepo.findAll();
+    }
+
     public Team getTeamByName(String name) {
         return teamRepo.findByName(name).get();
     }
